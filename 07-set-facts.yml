@@ -1,0 +1,9 @@
+- name: Demo on Set_fact ansible  
+  hosts: all
+  tasks: 
+    - name: Define a fact in this task and acces it from another task.
+      set_fact:
+        URL: fact.google.com
+
+    - debug:
+        msg: "URL = {{URL}}"

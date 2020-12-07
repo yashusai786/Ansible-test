@@ -1,0 +1,17 @@
+- name: Demo on variables using vars
+  hosts: all
+  vars:
+    URL: vars.google.com
+    ## if you declare variable in play then all the tasks can access those variables
+  tasks:
+    - name: Print a variable 
+      debug:
+        msg: URL = {{URL}}  ## You can access a variable in ansible playbook using {{  var-name }}   
+    - name: Print a variable from tasks 
+      debug:
+        msg: URL = {{URL}}
+      vars:
+        URL: tasks.google.com
+      ## This URL variable can be acessed only in this task.
+        
+

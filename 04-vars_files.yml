@@ -1,0 +1,8 @@
+- name: Demo on variables using files
+  hosts: all
+  vars_files:
+    - variables.yml
+  tasks:
+    - name: Print URL from  file 
+      debug:
+        msg: URL = {{URL}}

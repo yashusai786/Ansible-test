@@ -1,0 +1,12 @@
+- name: Demo on variables accessing from command line
+  hosts: all
+  tasks:
+    - name: Print URL which parsed in ansible-playbook command
+      debug:
+        msg: URL = {{URL}}
+    
+    - name: Print URL and see the variable precedence 
+      debug:
+        msg: URL = {{URL}}
+      vars:
+        URL: tasks.google.com

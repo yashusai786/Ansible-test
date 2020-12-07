@@ -1,0 +1,13 @@
+- name: Demo on playbook structure and this os play1
+  hosts: all
+  tasks:
+    - name: Task1 in Play1 
+      debug:
+        msg: "Hello from Play1"
+
+- name: Demo on playbook structure and this os play2
+  hosts: all
+  tasks:
+    - name: Task1 in Play2
+      debug:
+        msg: "Hello from Play2"

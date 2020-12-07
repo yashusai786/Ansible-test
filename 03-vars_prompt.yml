@@ -1,0 +1,11 @@
+- name: Demo on variables from user input using vars_prompt
+  hosts: all
+  vars_prompt:
+    - prompt: Enter the URL
+      name: URL
+      private: no 
+      
+  tasks:
+    - name: Print URL 
+      debug:
+        msg: URL = {{URL}}
